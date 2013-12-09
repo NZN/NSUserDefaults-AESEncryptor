@@ -33,7 +33,7 @@ Alternatively you can directly add source files to your project.
 
 * Define `NZUSERDEFAULTS_KEY` with a value at `Prefix.pch` in your project to use a custom AES key.
 
-* Import `NSUserDefaults+AESEncryptor.h` or add this to `Prefix.pch` in your project
+* Import `NSUserDefaults+AESEncryptor.h` and add this to `Prefix.pch`
 
 * Encrypt
 
@@ -44,7 +44,7 @@ Alternatively you can directly add source files to your project.
 * Decrypt
 
 ```objective-c
-[[NSUserDefaults standardUserDefaults] decryptedValueForKey:@"country"];
+NSString value = [[NSUserDefaults standardUserDefaults] decryptedValueForKey:@"country"];
 ```
 
 ## License
@@ -53,4 +53,4 @@ This code is distributed under the terms and conditions of the [MIT license](LIC
 
 ## Change-log
 
-A brief summary of each NZBundle release can be found on the [wiki](https://github.com/NZN/NSUserDefaults-AESEncryptor/wiki/Change-log).
+A brief summary of each NSUserDefaults-AESEncryptor release can be found on the [wiki](https://github.com/NZN/NSUserDefaults-AESEncryptor/wiki/Change-log).
