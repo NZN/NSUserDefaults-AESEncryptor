@@ -31,17 +31,17 @@ Alternatively you can directly add source files to your project.
 
 ## Usage
 
-1. Define `NZUSERDEFAULTS_KEY` with a value at `Prefix.pch` in your project to use a custom AES key.
+* Define `NZUSERDEFAULTS_KEY` with a value at `Prefix.pch` in your project to use a custom AES key.
 
-2. Import `NSUserDefaults+AESEncryptor.h` or add this to `Prefix.pch` in your project
+* Import `NSUserDefaults+AESEncryptor.h` or add this to `Prefix.pch` in your project
 
-3. Encrypt
+* Encrypt
 
 ```objective-c
 [[NSUserDefaults standardUserDefaults] encryptValue:@"Brazil" withKey:@"country"];
 ```
 
-4. Decrypt
+* Decrypt
 
 ```objective-c
 [[NSUserDefaults standardUserDefaults] decryptedValueForKey:@"country"];
