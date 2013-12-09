@@ -10,5 +10,4 @@ Pod::Spec.new do |s|
 	:tag => '0.0.1'
   }
   s.source_files = 'NSUserDefaults-AESEncryptor/*.{h,m}'
-  s.dependency = 'CocoaSecurity'
 end
