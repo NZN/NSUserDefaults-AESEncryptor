@@ -2,6 +2,8 @@
 
 NSUserDefaults-AESEncryptor is a NSUserDefaults category. Its purpose to encrypt/decrypt keys and values with AES encryptor.
 
+[![Build Status](https://api.travis-ci.org/NZN/NSUserDefaults-AESEncryptor.png)](https://api.travis-ci.org/NZN/NSUserDefaults-AESEncryptor.png)
+
 ## Requirements
 
 NSUserDefaults-AESEncryptor works on any iOS version and is compatible with both ARC and non-ARC projects. It depends on the following Apple frameworks, which should already be included with most Xcode templates:
