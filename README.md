@@ -6,7 +6,7 @@ NSUserDefaults-AESEncryptor is a NSUserDefaults category. Its purpose to encrypt
 
 ## Requirements
 
-NSUserDefaults-AESEncryptor works on any iOS version and is compatible with both ARC and non-ARC projects. It depends on the following Apple frameworks, which should already be included with most Xcode templates:
+NSUserDefaults-AESEncryptor works on iOS 5.0+ version and is compatible with ARC projects. It depends on the following Apple frameworks, which should already be included with most Xcode templates:
 
 * Foundation.framework
 
@@ -18,9 +18,9 @@ NSUserDefaults-AESEncryptor uses [CocoaSecurity](https://github.com/kelp404/Coco
 
 ### Cocoapods
 
-[CocoaPods](http://cocoapods.org) is the recommended way to add NSUserDefaults-AESEncryptor to your project.
+[CocoaPods](http://cocoapods.org) is the recommended way to add `NSUserDefaults-AESEncryptor` to your project.
 
-* Add a pod entry for NSUserDefaults-AESEncryptor to your Podfile `pod 'NSUserDefaults-AESEncryptor', '~> 0.0.1'`
+* Add a pod entry for NSUserDefaults-AESEncryptor to your Podfile `pod 'NSUserDefaults-AESEncryptor', :git => 'https://github.com/NZN/NSUserDefaults-AESEncryptor'`
 * Install the pod(s) by running `pod install`.
 
 ### Source files
