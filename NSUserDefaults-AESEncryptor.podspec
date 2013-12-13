@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   
   s.authors = { 'Bruno Tortato Furtado' => 'bruno.furtado@gruponzn.com' }
   
+  s.dependency 'CocoaSecurity', '~> 1.2.2'
   s.source_files = 'NSUserDefaults-AESEncryptor/*.{h,m}' 
   s.source = { :git => 'https://github.com/NZN/NSUserDefaults-AESEncryptor.git', :tag => '0.0.2' }
 end
