@@ -1,4 +1,4 @@
-#NSUserDefaults-AESEncryptor
+#NSUserDefaults-AESEncryptor ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
 
 NSUserDefaults-AESEncryptor is a NSUserDefaults category. Its purpose to encrypt/decrypt keys and values with AES encryptor.
 
