@@ -32,10 +32,11 @@
     NSString *value = @"Brasil";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    [[NSUserDefaults standardUserDefaults] setAESKey:@"World Cup 2014"];
     [[NSUserDefaults standardUserDefaults] encryptValue:@"Brazil" withKey:@"country"];
     [[NSUserDefaults standardUserDefaults] decryptedValueForKey:@"country"];
     
-    self.lbAESKey.text = [defaults aesKey];
+    self.lbAESKey.text = [defaults AESKey];
     self.lbKey.text = key;
     self.lbValue.text = value;
     

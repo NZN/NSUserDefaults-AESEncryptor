@@ -9,28 +9,17 @@
 #import "NSUserDefaults+AESEncryptor.h"
 #import "CocoaSecurity.h"
 
-static NSString *const kAESKeyString = @"aes key not found";
+static NSString * AESKeyString = @"aes key not found";
 
 @implementation NSUserDefaults (AESEncryptor)
 
 #pragma mark -
 #pragma mark - Public methods
 
-- (NSString *)aesKey
-{
-    NSString *aesKey = kAESKeyString;
-    
-#ifdef NZUSERDEFAULTS_KEY
-    aesKey = @NZUSERDEFAULTS_KEY;
-#endif
-    
-    return aesKey;
-}
-
 - (NSString *)decryptedValueForKey:(NSString *)key
 {
     NSString *encryptedKey = [CocoaSecurity aesEncrypt:key
-                                                   key:[self aesKey]].base64;
+                                                   key:[self AESKey]].base64;
     
     NSString *encryptedValue = [self objectForKey:encryptedKey];
     
@@ -38,7 +27,7 @@ static NSString *const kAESKeyString = @"aes key not found";
         return nil;
     
     NSString *value = [CocoaSecurity aesDecryptWithBase64:encryptedValue
-                                                      key:[self aesKey]].utf8String;
+                                                      key:[self AESKey]].utf8String;
     
 #ifdef NZDEBUG
     NSLog(@"%s\n \
@@ -46,7 +35,7 @@ static NSString *const kAESKeyString = @"aes key not found";
           %@ = %@ \n \
           %@ = %@ \n",
           __PRETTY_FUNCTION__,
-          [self aesKey],
+          [self AESKey],
           encryptedKey, encryptedValue,
           key, value);
 #endif
@@ -57,10 +46,10 @@ static NSString *const kAESKeyString = @"aes key not found";
 - (void)encryptValue:(NSString *)value withKey:(NSString *)key
 {
     NSString *encryptedKey = [CocoaSecurity aesEncrypt:key
-                                                   key:[self aesKey]].base64;
+                                                   key:[self AESKey]].base64;
     
     NSString *encryptedValue = [CocoaSecurity aesEncrypt:value
-                                                     key:[self aesKey]].base64;
+                                                     key:[self AESKey]].base64;
     
     [self setObject:encryptedValue forKey:encryptedKey];
     [self synchronize];
@@ -71,10 +60,20 @@ static NSString *const kAESKeyString = @"aes key not found";
           %@ = %@ \n \
           %@ = %@ \n",
           __PRETTY_FUNCTION__,
-          [self aesKey],
+          [self AESKey],
           key, value,
           encryptedKey, encryptedValue);
 #endif
+}
+
+- (void)setAESKey:(NSString *)key
+{
+    AESKeyString = key;
+}
+
+- (NSString *)AESKey
+{
+    return AESKeyString;
 }
 
 @end

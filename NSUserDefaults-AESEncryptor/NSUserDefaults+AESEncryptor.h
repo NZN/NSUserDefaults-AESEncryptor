@@ -25,17 +25,12 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef NZUSERDEFAULTS_KEY
-#pragma message("Sets the NZUSERDEFAULTS_KEY at 'Prefix.pch' to using a custom encryptor key.")
-#endif
-
 @interface NSUserDefaults (AESEncryptor)
 
-- (NSString *)aesKey;
-
 - (NSString *)decryptedValueForKey:(NSString *)key;
+- (void)encryptValue:(NSString *)value withKey:(NSString *)key;
 
-- (void)encryptValue:(NSString *)value
-             withKey:(NSString *)key;
+- (void)setAESKey:(NSString *)key;
+- (NSString *)AESKey;
 
 @end
