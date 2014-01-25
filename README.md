@@ -35,19 +35,16 @@ Alternatively you can directly add source files to your project.
 
 ## Usage
 
-* Define `NZUSERDEFAULTS_KEY` with a value at `Prefix.pch` in your project to use a custom AES key.
-
 * Import `NSUserDefaults+AESEncryptor.h` and add this to `Prefix.pch`
 
-* Encrypt
-
 ```objective-c
+// Set a key. (If no key is set, a default key will be used)
+[[NSUserDefaults standardUserDefaults] setAESKey:@"World Cup 2014"];
+
+// Encrypt
 [[NSUserDefaults standardUserDefaults] encryptValue:@"Brazil" withKey:@"country"];
-```
 
-* Decrypt
-
-```objective-c
+// Decrypt
 NSString value = [[NSUserDefaults standardUserDefaults] decryptedValueForKey:@"country"];
 ```
 
