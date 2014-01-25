@@ -22,7 +22,7 @@ NSUserDefaults-AESEncryptor uses [CocoaSecurity](https://github.com/kelp404/Coco
 
 [CocoaPods](http://cocoapods.org) is the recommended way to add `NSUserDefaults-AESEncryptor` to your project.
 
-* Add a pod entry for NSUserDefaults-AESEncryptor to your Podfile `pod 'NSUserDefaults-AESEncryptor', '~> 0.0.2'`
+* Add a pod entry for NSUserDefaults-AESEncryptor to your Podfile `pod 'NSUserDefaults-AESEncryptor'`
 * Install the pod(s) by running `pod install`.
 
 ### Source files
