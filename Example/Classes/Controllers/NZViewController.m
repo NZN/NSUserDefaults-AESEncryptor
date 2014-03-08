@@ -28,19 +28,25 @@
 {
     [super viewDidLoad];
     
+    // define value and key
     NSString *key = @"Country";
     NSString *value = @"Brasil";
+   
+    // set AES Key for base64 encrypt
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setAESKey:@"World Cup 2014"];
     
-    [[NSUserDefaults standardUserDefaults] setAESKey:@"World Cup 2014"];
-    [[NSUserDefaults standardUserDefaults] encryptValue:@"Brazil" withKey:@"country"];
-    [[NSUserDefaults standardUserDefaults] decryptedValueForKey:@"country"];
-    
+    // show key and values before encrypt
     self.lbAESKey.text = [defaults AESKey];
     self.lbKey.text = key;
     self.lbValue.text = value;
     
+    // encrypt and decrypt for example
     [defaults encryptValue:value withKey:key];
+    [defaults decryptedValueForKey:key];
+    
+    // remove value and check if is null
+    [defaults removeObjectForAESKey:key];
     [defaults decryptedValueForKey:key];
 }
 
