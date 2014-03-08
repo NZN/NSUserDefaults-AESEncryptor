@@ -46,6 +46,9 @@ Alternatively you can directly add source files to your project.
 
 // Decrypt
 NSString value = [[NSUserDefaults standardUserDefaults] decryptedValueForKey:@"country"];
+
+// Remove object
+[[NSUserDefaults standardUserDefaults] removeObjectForAESKey:@"country"];
 ```
 
 ## License
