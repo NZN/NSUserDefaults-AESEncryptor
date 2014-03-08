@@ -23,17 +23,20 @@ static NSString * AESKeyString = @"aes key not found";
     
     NSString *encryptedValue = [self objectForKey:encryptedKey];
     
-    if (!encryptedValue)
+    if (!encryptedValue) {
+        NSLog(@"%s\n\nkey '%@' not found \n\n", __PRETTY_FUNCTION__, key);
         return nil;
+    }
+    
     
     NSString *value = [CocoaSecurity aesDecryptWithBase64:encryptedValue
                                                       key:[self AESKey]].utf8String;
     
-#ifdef NZDEBUG
-    NSLog(@"%s\n \
-          aesKey = %@\n \
-          %@ = %@ \n \
-          %@ = %@ \n",
+#ifdef DEBUG
+    NSLog(@"%s\n\n \
+          aesKey: [%@]\n\n \
+          [encrypt_key, encrypt_value]: [%@, %@] \n\n \
+          [key, value]: [%@, %@] \n\n",
           __PRETTY_FUNCTION__,
           [self AESKey],
           encryptedKey, encryptedValue,
@@ -54,16 +57,23 @@ static NSString * AESKeyString = @"aes key not found";
     [self setObject:encryptedValue forKey:encryptedKey];
     [self synchronize];
     
-#ifdef NZDEBUG
-    NSLog(@"%s\n \
-          aesKey = %@\n \
-          %@ = %@ \n \
-          %@ = %@ \n",
+#ifdef DEBUG
+    NSLog(@"%s\n\n \
+          aesKey: [%@]\n\n \
+          [key, value]: [%@, %@] \n\n \
+          [encrypt_key, encrypt_value]: [%@, %@] \n\n",
           __PRETTY_FUNCTION__,
           [self AESKey],
           key, value,
           encryptedKey, encryptedValue);
 #endif
+}
+
+- (void)removeObjectForAESKey:(NSString *)key
+{
+    NSString *encryptedKey = [CocoaSecurity aesEncrypt:key key:[self AESKey]].base64;
+    [self removeObjectForKey:encryptedKey];
+    [self synchronize];
 }
 
 - (void)setAESKey:(NSString *)key

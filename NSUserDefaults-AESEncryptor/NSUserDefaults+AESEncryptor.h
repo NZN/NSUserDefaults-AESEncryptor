@@ -30,6 +30,8 @@
 - (NSString *)decryptedValueForKey:(NSString *)key;
 - (void)encryptValue:(NSString *)value withKey:(NSString *)key;
 
+- (void)removeObjectForAESKey:(NSString *)key;
+
 - (void)setAESKey:(NSString *)key;
 - (NSString *)AESKey;
 
