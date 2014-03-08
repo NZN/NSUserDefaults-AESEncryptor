@@ -5,6 +5,7 @@ NSUserDefaults-AESEncryptor is a NSUserDefaults category. Its purpose to encrypt
 [![Build Status](https://api.travis-ci.org/NZN/NSUserDefaults-AESEncryptor.png)](https://api.travis-ci.org/NZN/NSUserDefaults-AESEncryptor.png)
 [![Cocoapods](https://cocoapod-badges.herokuapp.com/v/NSUserDefaults-AESEncryptor/badge.png)](http://beta.cocoapods.org/?q=name%3Ansuserdefaults%20name%3Aaesencryptor%2A)
 [![Cocoapods](https://cocoapod-badges.herokuapp.com/p/NSUserDefaults-AESEncryptor/badge.png)](http://beta.cocoapods.org/?q=name%3Ansuserdefaults%20name%3Aaesencryptor%2A)
+[![Analytics](https://ga-beacon.appspot.com/UA-48753665-1/NZN/NSUserDefaults-AESEncryptor/README.md)](https://github.com/igrigorik/ga-beacon)
 
 ## Requirements
 
