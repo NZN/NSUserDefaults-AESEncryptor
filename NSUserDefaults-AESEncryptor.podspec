@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'NSUserDefaults-AESEncryptor'
-  s.version = '0.0.3'
+  s.version = '0.0.4'
   s.license = 'MIT'
   s.summary = 'Save and load data using AES encryption'
   s.homepage	 = 'https://github.com/NZN/NSUserDefaults-AESEncryptor'
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   
   s.dependency 'CocoaSecurity', '~> 1.2.2'
   s.source_files = 'NSUserDefaults-AESEncryptor/*.{h,m}' 
-  s.source = { :git => 'https://github.com/NZN/NSUserDefaults-AESEncryptor.git', :tag => '0.0.3' }
+  s.source = { :git => 'https://github.com/NZN/NSUserDefaults-AESEncryptor.git', :tag => '0.0.4' }
 end
